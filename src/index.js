@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './style/style.css'
 import './config/axios'
 import App from './App'
 import { Provider } from 'react-redux'

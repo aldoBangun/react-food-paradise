@@ -1,0 +1,13 @@
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-footer-sm {
+  height: 10rem;
+}
+
+.h-footer-lg {
+  height: 20rem;
+}
