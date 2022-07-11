@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.h-navbar {
+  height: 6.875rem;
+}
+
 .h-footer-sm {
   height: 10rem;
 }
