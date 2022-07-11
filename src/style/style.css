@@ -1,3 +1,11 @@
+:root{
+  --icon-sm: 1rem;
+  --clr-light-grey: #EFEFEF;
+  --clr-dark-grey: #B6B6B6;
+  --h-navbar: 6.875rem;
+  --img-xl: 25rem;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -5,13 +13,60 @@
 }
 
 .h-navbar {
-  height: 6.875rem;
+  height: var(--h-navbar);
+}
+
+.h-section {
+  min-height: calc(100vh - var(--h-navbar));
+}
+
+.hero-image {
+  height: var(--img-xl);
+  width: var(--img-xl);
+}
+
+.form-search {
+  position: relative;
+  --icon-position: .5rem;
+}
+
+.search-bar {
+  height: 3rem;
+  background-color: var(--clr-light-grey);
+  padding-left: calc(var(--icon-position) + var(--icon-sm) + 1rem);
+}
+
+.btn-icon {
+  position: absolute;
+  top: 50%;
+  left: var(--icon-position);
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: var(--clr-dark-grey);
+}
+
+.btn-icon:hover,
+.btn-icon:active,
+.btn-icon:focus {
+  outline: none;
+  background-color: transparent;
+  color: #99f;
+}
+
+.btn-icon:active {
+  font-weight: 500;
+}
+
+.icon {
+  height: var(--icon-sm);
+  width: var(--icon-sm);
 }
 
 .h-footer-sm {
-  height: 10rem;
+  height: 8rem;
 }
 
 .h-footer-lg {
-  height: 20rem;
+  height: 15rem;
 }
