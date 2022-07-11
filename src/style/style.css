@@ -6,6 +6,10 @@
   --img-xl: 25rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
@@ -16,8 +20,21 @@
   height: var(--h-navbar);
 }
 
-.h-section {
+.hero-section {
+  position: relative;
   min-height: calc(100vh - var(--h-navbar));
+  z-index: 2;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: -20vh;
+  right: -20vh;
+  height: 110vh;
+  width: 25rem;
+  background-color: #ffc107;
+  z-index: -1;
 }
 
 .hero-image {
