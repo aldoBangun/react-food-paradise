@@ -2,10 +2,7 @@ import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
 import { getRecipes } from '../thunks/recipe'
 
 const recipeAdapter = createEntityAdapter({
-  selectId: (recipe) => {
-    console.log(recipe)
-    return recipe.recipe_id
-  }
+  selectId: (recipe) => recipe.recipe_id
 })
 
 const recipeSlice = createSlice({
