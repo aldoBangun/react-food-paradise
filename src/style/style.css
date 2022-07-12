@@ -22,8 +22,11 @@ body {
 
 .hero-section {
   position: relative;
-  min-height: calc(100vh - var(--h-navbar));
   z-index: 2;
+}
+
+.h-section {
+  min-height: calc(100vh - var(--h-navbar));
 }
 
 .hero-section::after {
@@ -40,6 +43,13 @@ body {
 .hero-image {
   height: var(--img-xl);
   width: var(--img-xl);
+}
+
+.title-section {
+  border-left: #ffc107 solid 5px;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .form-search {

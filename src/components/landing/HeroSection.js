@@ -3,7 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 export default function HeroSection() {
   return (
-    <section className='hero-section'>
+    <section className='hero-section h-section'>
       <Row className="justify-content-between align-items-center">
         <Col lg={6}>
           <Headline />
