@@ -1,0 +1,28 @@
+.auth-layout {
+  min-height: 100vh;
+}
+
+.left-side,
+.right-side {
+  min-height: 100vh;
+}
+
+.left-side {
+  background-image: var(--bg-image);
+  background-size: cover;
+  position: relative;
+}
+
+.left-side::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr-primary);
+  opacity: .8;
+  z-index: 1;
+}
+
+.left-side > * {
+  position: relative;
+  z-index: 2;
+}
