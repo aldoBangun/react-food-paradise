@@ -9,7 +9,7 @@ export default function FooterSmall() {
           <Col lg={{ span: 6, offset: 3 }} className="text-center">
             <FooterNav />
           </Col>
-          <Col lg="3" className="text-center">
+          <Col lg="3" className="text-end">
             <p className='font-weight-bold'> &copy; Arkademy </p>
           </Col>
         </Row>

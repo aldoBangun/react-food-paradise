@@ -1,0 +1,15 @@
+.recipe-card {
+  position: relative;
+}
+
+.recipe-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, transparent, rgba(0,0,0, .75));
+}
+
+.recipe-card .card-title {
+  position: relative;
+  z-index: 2;
+}
