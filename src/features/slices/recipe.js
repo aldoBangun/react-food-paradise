@@ -11,7 +11,7 @@ const recipeSlice = createSlice({
   extraReducers: {
     [getRecipes.fulfilled]: (state, action) => {
       recipeAdapter.setAll(state, action.payload)
-    }
+    },
   }
 })
 
