@@ -12,7 +12,7 @@ const Register = () => {
       <FormRegister />
 
       <div className="text-center mt-3">
-        <AuthLink link="login" label="Log in Here" text="Already have account? " />
+        <AuthLink link="/login" label="Log in Here" text="Already have account? " />
       </div>
     </div>
   )

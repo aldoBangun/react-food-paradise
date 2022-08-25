@@ -5,7 +5,8 @@
 
 .form-control:focus {
   border-color: var(--bs-warning);
-  box-shadow: 0 0 0 1px var(--bs-warning);
+  box-shadow: 0 0 0 1px var(--bs-warning),
+    -3px 3px 5px rgba(0,0,0,.1);
 }
 
 .form-control.form-error {
