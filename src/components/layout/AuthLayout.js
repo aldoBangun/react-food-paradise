@@ -10,7 +10,7 @@ const AuthLayout = () => (
         <h6 className="text-white mt-3">Food Paradise.</h6>
       </div>
     </section>
-    <section className="right-side d-flex align-items-center justify-content-center flex-1">
+    <section className="right-side d-flex align-items-center justify-content-center flex-grow-1">
       <Outlet/>
     </section>
   </div>

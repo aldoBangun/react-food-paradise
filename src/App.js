@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound'
 import AuthLayout from './components/layout/AuthLayout'
 import AppLayout from './components/layout/AppLayout'
 import Login from './pages/auth/Login'
+import Register from './pages/auth/Register'
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<AuthLayout />}>
-            <Route path="/login" element={<Login />}/>
+            <Route path="login" element={<Login />}/>
+            <Route path="register" element={<Register />}/>
           </Route>
           <Route element={<AppLayout />}>
             <Route path='/' element={<Landing />} />
