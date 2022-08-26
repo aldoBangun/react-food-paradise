@@ -1,9 +1,29 @@
+import { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearError } from '../../features/slices/auth'
+import { login } from '../../features/thunks/user'
+import { useNavigate } from 'react-router-dom'
+import * as Spinner from 'react-loader-spinner'
 import '../../style/Form.css'
 
 const FormLogin = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const authState = useSelector(state => state.auth)
+  const loading = useSelector(state => state.loading)
+  const { token, error: authError } = authState
+
+  const handleCloseAlert = () => {
+    dispatch(clearError())
+  } 
+
+  useEffect(() => {
+    if (token) navigate('/')
+  }, [token])
+
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
       .email('Invalid email')
@@ -21,7 +41,7 @@ const FormLogin = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: (values) => {
-      console.log(values)
+      dispatch(login(values))
     }
   })
 
@@ -34,7 +54,15 @@ const FormLogin = () => {
 
   return (
     <>
-      <Form onSubmit={formik.handleSubmit}>
+      {
+        authError && (
+          <Alert variant="danger" onClose={handleCloseAlert} dismissible>
+            {authError}
+          </Alert>
+        )
+      }
+
+      <Form className="auth-form" onSubmit={formik.handleSubmit}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control className={emailError ? 'form-error' : ''} type="email" placeholder="Enter email address" name="email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} />
@@ -48,7 +76,21 @@ const FormLogin = () => {
         </Form.Group>
 
         <div className="d-grid">
-          <Button className="text-white" type="submit" variant="warning">Log In</Button>
+          <Button className="text-white d-flex align-items-center justify-content-center gap-2" type="submit" variant="warning" disabled={loading.isLoading}>
+            <Spinner.Oval
+              height={20}
+              width={20}
+              color="#fff"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={loading.isLoading}
+              ariaLabel='oval-loading'
+              secondaryColor="#eee"
+              strokeWidth={3}
+              strokeWidthSecondary={3}
+            />
+            {loading.isLoading ? 'Loggining In' : 'Log In'}
+          </Button>
         </div>
       </Form>
     </>
