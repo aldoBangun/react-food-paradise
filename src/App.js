@@ -7,8 +7,9 @@ import AuthLayout from './components/layout/AuthLayout'
 import AppLayout from './components/layout/AppLayout'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
+import withRedux from './hoc/withRedux'
 
-export default function App() {
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -28,3 +29,6 @@ export default function App() {
     </>
   )
 }
+
+const AppWithRedux = withRedux(App)
+export default AppWithRedux
