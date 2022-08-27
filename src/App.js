@@ -8,6 +8,7 @@ import AppLayout from './components/layout/AppLayout'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import withRedux from './hoc/withRedux'
+import RecipeDetail from './pages/recipe/RecipeDetail'
 
 const App = () => {
   return (
@@ -19,8 +20,11 @@ const App = () => {
             <Route path="register" element={<Register />}/>
           </Route>
           <Route element={<AppLayout />}>
-            <Route path='/' element={<Landing />} />
-            <Route path="recipes/add" element={<RecipeAdd />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="recipes">
+              <Route path="add" element={<RecipeAdd />} />
+              <Route path=":recipeId" element={<RecipeDetail />} />
+            </Route>
             <Route path="profile" element={<ProfileDetail />} />
             <Route path='*' element={<NotFound />} />
           </Route>
