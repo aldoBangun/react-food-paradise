@@ -10,3 +10,7 @@ export const getLatestRecipe = createAsyncThunk('recipes/getLatestRecipe', async
   const response = await axios.get('/recipes/latest')
   return [response.data.data[0]]
 })
+
+export const createRecipe = createAsyncThunk('recipes/createRecipe', async (recipe) => {
+  await axios.post('/recipes', recipe)
+})
