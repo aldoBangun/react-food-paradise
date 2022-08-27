@@ -2,6 +2,7 @@
   --icon-sm: 1rem;
   --clr-light-grey: #EFEFEF;
   --clr-dark-grey: #B6B6B6;
+  --clr-primary: #ffc107;
   --h-navbar: 6.875rem;
   --img-xxl: 30rem;
   --img-xl: 24rem;
@@ -10,6 +11,16 @@
 
 body {
   overflow-x: hidden;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+.bg-lightgray {
+  background-color: var(--clr-light-grey);
 }
 
 .flex-center {
@@ -133,4 +144,16 @@ body {
 
 .h-footer-lg {
   height: 15rem;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
