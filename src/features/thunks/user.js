@@ -28,7 +28,7 @@ export const getUsers = createAsyncThunk('users/getUsers', async () => {
 
 export const getUser = createAsyncThunk('users/getUser', async (id) => {
   const response = await axios.get(`/users/${id}`)
-  return response.data
+  return response?.data?.data
 })
 
 export const updateUser = createAsyncThunk('users/updateUser', async (user) => {
