@@ -1,11 +1,12 @@
-import { Container } from 'react-bootstrap'
+import MediumContainer from '../../components/layout/MediumContainer'
+import FormAddRecipe from '../../components/recipe/FormAddRecipe'
 
 export default function RecipeAdd() {
   return (
     <>
-      <Container className="h-section">
-        <h1>Add Recipe page</h1>
-      </Container>
+      <MediumContainer className="h-section">
+        <FormAddRecipe />
+      </MediumContainer>
     </>
   )
 }
