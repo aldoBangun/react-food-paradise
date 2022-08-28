@@ -10,6 +10,7 @@ const withAuth = (Component) => {
     const dispatch = useDispatch()
     const authState = useSelector(state => state.auth)
     const { token } = authState
+    
     useEffect(() => {
       if (!token) {
         dispatch(resetCurrentUser())
@@ -26,10 +27,7 @@ const withAuth = (Component) => {
         return
       }
   
-      console.log(exp, Date.now())
-
       dispatch(getUser(userId))
-  
     }, [token])  
   
   
