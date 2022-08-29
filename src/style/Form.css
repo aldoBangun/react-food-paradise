@@ -1,18 +1,15 @@
-.auth-form .form-control,
-.comment-form .form-control {
+form:is(.auth-form, .comment-form, .profile-form) .form-control {
   padding: .75rem 1.2rem;
   font-size: .8rem;
 }
 
-.auth-form .form-control:focus,
-.comment-form .form-control:focus {
+form:is(.auth-form, .comment-form, .profile-form) .form-control:focus {
   border-color: var(--bs-warning);
   box-shadow: 0 0 0 1px var(--bs-warning),
     -3px 3px 5px rgba(0,0,0,.1);
 }
 
-.auth-form .form-control.form-error,
-.comment-form .form-control.form-error {
+form:is(.auth-form, .comment-form, .profile-form) .form-control.form-error {
   border-color: var(--bs-danger);
   box-shadow: 0 0 0 1px var(--bs-danger);
 }

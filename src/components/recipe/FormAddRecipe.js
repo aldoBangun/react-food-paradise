@@ -3,8 +3,13 @@ import { CardImage } from 'react-bootstrap-icons'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
+import { createRecipe } from '../../features/thunks/recipe'
+import { useDispatch, useSelector } from 'react-redux'
+import generateFileURL from '../../utils/generateFileURL'
 
 const FormAddRecipe = () => {
+  const dispatch = useDispatch()
+  const currentUser = useSelector(state => state.currentUser.user)
   const [imageFile, setImageFile] = useState('')
   const [imageURL, setImageURL] = useState('')
   const [imageError, setImageError] = useState('')
@@ -30,23 +35,16 @@ const FormAddRecipe = () => {
       const ingredients = values.ingredients.split(', ')
 
       const data = {
-        userId: 1,
+        user_id: currentUser.user_id,
         title: values.title,
         ingredients,
-        recipeImage: imageFile,
+        photo: imageFile,
+        videos: values.videos
       }
       
-      console.log(data)
+      dispatch(createRecipe(data))
     }
   })
-
-  const generateFileURL = (file) => {
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onloadend = () => {
-      setImageURL(reader.result)
-    }
-  }
 
   const handleImageUpload = (e) => {
     const ONE_MEGA_BYTE = 1024 * 1024
@@ -74,12 +72,12 @@ const FormAddRecipe = () => {
       if (!isValidSize) return setImageError('File too large. Image file cannot be more than 1 Mb')
     }
 
-    generateFileURL(file)
+    generateFileURL(file, setImageURL)
     setImageFile(file)
   }
 
   return (
-    <Form className="mb-5" onSubmit={formik.handleSubmit}>
+    <Form className="mb-5" onSubmit={formik.handleSubmit} encType="multipart/form-data">
       <Form.Group className="mb-4" controlId="recipeImage">
         <Form.Label className="d-block cursor-pointer">
           <Card className="d-flex align-items-center justify-content-center w-100 bg-lightgray" style={{ height: 360 }}>

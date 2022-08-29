@@ -5,6 +5,7 @@ import latestRecipe from '../features/slices/latestRecipe'
 import loading from '../features/slices/loading'
 import auth from '../features/slices/auth'
 import currentUser from '../features/slices/currentUser'
+import userRecipe from '../features/slices/userRecipe'
 
 export default combineReducers({
   users,
@@ -12,5 +13,6 @@ export default combineReducers({
   latestRecipe,
   loading,
   auth,
-  currentUser
+  currentUser,
+  userRecipe
 })
