@@ -12,5 +12,13 @@ export const getLatestRecipe = createAsyncThunk('recipes/getLatestRecipe', async
 })
 
 export const createRecipe = createAsyncThunk('recipes/createRecipe', async (recipe) => {
-  await axios.post('/recipes', recipe)
+  try {
+    await axios.post('/recipes', recipe, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  } catch(err) {
+    console.log(err)
+  }
 })

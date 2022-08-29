@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getUser } from '../thunks/currentUser'
+import { getUser, updateUser } from '../thunks/currentUser'
 
 const currentUserSlice = createSlice({
   name: 'slice',
@@ -21,6 +21,14 @@ const currentUserSlice = createSlice({
     [getUser.rejected]: (state) => {
       state.user = null
       state.error = null
+    },
+    [updateUser.fulfilled]: (state, { payload }) => {
+      state.user = payload
+      state.error = null
+    },
+    [updateUser.rejected]: (state, { payload }) => {
+      state.user = null
+      state.error = payload
     }
   }
 })

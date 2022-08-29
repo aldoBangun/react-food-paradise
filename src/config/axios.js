@@ -1,8 +1,17 @@
 import axios from 'axios'
-import { dispatch } from '../app/store'
+import { dispatch, store } from '../app/store'
 import { setLoading } from '../features/slices/loading'
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL
+
+const select = state => state.auth.token
+
+const listener = () => {
+  const token = select(store.getState())
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+}
+
+store.subscribe(listener)
 
 axios.interceptors.request.use((config) => {
   dispatch(setLoading(true))
