@@ -10,3 +10,24 @@ export const getLatestRecipe = createAsyncThunk('recipes/getLatestRecipe', async
   const response = await axios.get('/recipes/latest')
   return [response.data.data[0]]
 })
+
+export const createRecipe = createAsyncThunk('recipes/createRecipe', async (recipe) => {
+  try {
+    await axios.post('/recipes', recipe, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  } catch(err) {
+    console.log(err)
+  }
+})
+
+export const getRecipeById = createAsyncThunk('recipes/getRecipeById', async (id, { rejectWithValue }) => {
+  try {
+    const response = await axios.get(`/recipes/${id}`)
+    return response?.data?.data
+  } catch (err) {
+    return rejectWithValue(err?.response?.data?.message || 'Something went wrong')
+  }
+})

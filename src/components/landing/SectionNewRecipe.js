@@ -9,7 +9,6 @@ import Section from './Section'
 export default function newRecipeSection() {
   const dispatch = useDispatch()
   const recipe = useSelector(latestRecipeSelectors.selectAll)
-  const loading = useSelector((state) => state.loading.isLoading)
   
   useEffect(()=> {
     dispatch(getLatestRecipe())
@@ -18,8 +17,6 @@ export default function newRecipeSection() {
   const config = {
     imageModel: 'section-image-filled'
   }
-
-  console.log(loading)
 
   return (
     <Section>

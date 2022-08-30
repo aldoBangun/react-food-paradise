@@ -1,11 +1,16 @@
 import { Container } from 'react-bootstrap'
+import TabsRecipe from '../../components/profile/TabsRecipe'
+import ProfileView from '../../components/profile/ProfileView'
+import withNoAuth from '../../hoc/withNoAuth'
 
-export default function ProfileDetail() {
-  return (
-    <>
-      <Container className="h-section">
-        <h1>Profile Detail</h1>
-      </Container>
-    </>
-  )
-}
+const ProfileDetail = () => (
+  <Container className="h-section d-flex flex-column justify-content-between">
+    <ProfileView />
+    <div>
+      <TabsRecipe />
+    </div>
+  </Container>
+)
+
+const ProfileDetailWithNoAuth = withNoAuth(ProfileDetail)
+export default ProfileDetailWithNoAuth

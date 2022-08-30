@@ -1,3 +1,5 @@
+import withAuth from './hoc/withAuth'
+import withRedux from './hoc/withRedux'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
 import RecipeAdd from './pages/recipe/RecipeAdd'
@@ -7,7 +9,6 @@ import AuthLayout from './components/layout/AuthLayout'
 import AppLayout from './components/layout/AppLayout'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
-import withRedux from './hoc/withRedux'
 import RecipeDetail from './pages/recipe/RecipeDetail'
 
 const App = () => {
@@ -34,5 +35,6 @@ const App = () => {
   )
 }
 
-const AppWithRedux = withRedux(App)
+const AppWithAuth = withAuth(App)
+const AppWithRedux = withRedux(AppWithAuth)
 export default AppWithRedux
