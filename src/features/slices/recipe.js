@@ -12,6 +12,9 @@ const recipeSlice = createSlice({
     [getRecipes.fulfilled]: (state, action) => {
       recipeAdapter.setAll(state, action.payload)
     },
+    // [createRecipe.fulfilled]: (state, action) => {
+    //   recipeAdapter.addOne(state, action.payload)
+    // }
   }
 })
 

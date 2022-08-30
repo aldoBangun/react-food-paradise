@@ -1,0 +1,15 @@
+form:is(.auth-form, .comment-form, .profile-form) .form-control {
+  padding: .75rem 1.2rem;
+  font-size: .8rem;
+}
+
+form:is(.auth-form, .comment-form, .profile-form) .form-control:focus {
+  border-color: var(--bs-warning);
+  box-shadow: 0 0 0 1px var(--bs-warning),
+    -3px 3px 5px rgba(0,0,0,.1);
+}
+
+form:is(.auth-form, .comment-form, .profile-form) .form-control.form-error {
+  border-color: var(--bs-danger);
+  box-shadow: 0 0 0 1px var(--bs-danger);
+}
