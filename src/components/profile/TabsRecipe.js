@@ -2,6 +2,7 @@ import { Tabs, Tab } from 'react-bootstrap'
 import TabMyRecipe from './TabMyRecipe'
 import TabSavedRecipe from './TabSavedRecipe'
 import TabLikedRecipe from './TabLikedRecipe'
+import '../../style/Tabs.css'
 
 const TabsRecipe = () => {
   return (
