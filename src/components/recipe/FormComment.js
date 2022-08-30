@@ -32,6 +32,7 @@ const FormComment = () => {
             className={`${formik.errors.comment ? 'form-error' : ''} resize-none bg-lightgray`}
             as="textarea"
             name="comment"
+            placeholder="comment"
             rows={5}
             onChange={formik.handleChange}
             value={formik.values.comment}

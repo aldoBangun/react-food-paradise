@@ -3,7 +3,7 @@ import ItemImage from './ItemImage'
 import ItemInfo from './ItemInfo'
 
 export default function ItemGrid(props) {
-  const { photo, title } = props.recipe
+  const { photo, title, recipe_id } = props.recipe
   const { imageModel } = props.config
   const desc = 'Quick + Easy Chicken Bone Broth Ramen- Healthy chicken ramen in a hurry? That’s right!'
 
@@ -14,7 +14,7 @@ export default function ItemGrid(props) {
       </Col>
 
       <Col lg={5} className="d-flex align-items-center">
-        <ItemInfo title={title} description={desc} />
+        <ItemInfo title={title} description={desc} id={recipe_id} />
       </Col>
     </Row>
   )

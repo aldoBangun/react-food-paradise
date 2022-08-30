@@ -1,0 +1,17 @@
+.nav-tabs {
+  --bs-nav-tabs-link-active-bg: transparent;
+  --bs-nav-tabs-border-color: #dfdfdf;
+}
+
+.nav-tabs .nav-link {
+  font-weight: 500;
+  color: #888;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #000;
+  border-bottom: inherit;
+}
