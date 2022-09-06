@@ -31,3 +31,12 @@ export const getRecipeById = createAsyncThunk('recipes/getRecipeById', async (id
     return rejectWithValue(err?.response?.data?.message || 'Something went wrong')
   }
 })
+
+export const searchRecipe = createAsyncThunk('recipes/SearchRecipe', async (title, { rejectWithValue }) => {
+  try {
+    const response = await axios.get(`/recipes?title=${title}`)
+    return response?.data?.data
+  } catch(err) {
+    return rejectWithValue(err?.response?.data?.message || 'Something went wrong')
+  }
+})
