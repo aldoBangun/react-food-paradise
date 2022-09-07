@@ -107,6 +107,7 @@ ol {
 
 .search-bar {
   height: 3rem;
+  min-width: 30rem;
   background-color: var(--clr-light-grey);
   padding-left: calc(var(--icon-position) + var(--icon-sm) + 1rem);
 }

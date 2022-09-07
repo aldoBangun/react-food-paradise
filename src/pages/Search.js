@@ -12,17 +12,20 @@ const Search = () => {
   const recipes = useSelector(recipeSelectors.selectAll)
   const [searchParams] = useSearchParams()
   const keyword = searchParams.get('keyword') || ''
+  const sort = searchParams.get('sort') || ''
+  const order = searchParams.get('order') || ''
   
   useEffect(()=> {
-    dispatch(searchRecipe(keyword))
-  }, [dispatch, keyword])
+    const searchConfig = { keyword, sort, order }
+    dispatch(searchRecipe(searchConfig))
+  }, [dispatch, keyword, sort, order])
 
   return (
     <Container className="h-section">
       <h6 className="text-muted mb-3">Search Recipe</h6>
       
-      <div className="w-50 mb-4">
-        <SearchBar />
+      <div className="mb-4">
+        <SearchBar filter={true} />
       </div>
 
       {recipes ? (<RecipeList recipes={recipes} />) : (<p className="text-muted">Loading...</p>)}
