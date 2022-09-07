@@ -10,6 +10,7 @@ import AppLayout from './components/layout/AppLayout'
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import RecipeDetail from './pages/recipe/RecipeDetail'
+import Search from './pages/Search'
 
 const App = () => {
   return (
@@ -22,10 +23,9 @@ const App = () => {
           </Route>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Landing />} />
-            <Route path="recipes">
-              <Route path="add" element={<RecipeAdd />} />
-              <Route path=":recipeId" element={<RecipeDetail />} />
-            </Route>
+            <Route path="recipes" element={<Search />} />
+            <Route path="recipes/add" element={<RecipeAdd />} />
+            <Route path="recipes/:recipeId" element={<RecipeDetail />} />
             <Route path="profile" element={<ProfileDetail />} />
             <Route path='*' element={<NotFound />} />
           </Route>

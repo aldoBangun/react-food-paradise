@@ -1,5 +1,5 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
-import { getRecipes } from '../thunks/recipe'
+import { getRecipes, searchRecipe } from '../thunks/recipe'
 
 const recipeAdapter = createEntityAdapter({
   selectId: (recipe) => recipe.recipe_id
@@ -9,12 +9,12 @@ const recipeSlice = createSlice({
   name: 'recipes',
   initialState: recipeAdapter.getInitialState(),
   extraReducers: {
-    [getRecipes.fulfilled]: (state, action) => {
-      recipeAdapter.setAll(state, action.payload)
+    [getRecipes.fulfilled]: (state, { payload }) => {
+      recipeAdapter.setAll(state, payload)
     },
-    // [createRecipe.fulfilled]: (state, action) => {
-    //   recipeAdapter.addOne(state, action.payload)
-    // }
+    [searchRecipe.fulfilled]: (state, { payload }) => {
+      recipeAdapter.setAll(state, payload)
+    }
   }
 })
 
