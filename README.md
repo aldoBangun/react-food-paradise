@@ -106,31 +106,45 @@ REACT_APP_API_URL=your_backend_here
 
 **Login Page**
 
-![login-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Login_Page_mwxjec.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Login_Page_mwxjec.png" alt="login" width="400" />
+
+<br />
 
 **Register Page**
 
-![register-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Register_Page_zhur2c.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Register_Page_zhur2c.png" alt="register" width="400" />
+
+<br />
 
 **Home Page**
 
-![home-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453961/images/food-paradise-desktop/Home_Page_zv3g2p.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453961/images/food-paradise-desktop/Home_Page_zv3g2p.png" alt="home" width="400" />
+
+<br />
 
 **Recipes Page**
 
-![recipes-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Recipes_Page_rjjshr.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Recipes_Page_rjjshr.png" alt="recipes" width="400" />
+
+<br />
 
 **Add Recipe Page**
 
-![add-recipe-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Add_Recipe_Page_dgvjyu.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453958/images/food-paradise-desktop/Add_Recipe_Page_dgvjyu.png" alt="add-recipe" width="400" />
+
+<br />
 
 **Detail Recipe Page**
 
-![detail-recipe-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453960/images/food-paradise-desktop/Detail_Recipe_jbnlbr.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453960/images/food-paradise-desktop/Detail_Recipe_jbnlbr.png" alt="detail-recipe" width="400" />
+
+<br />
 
 **Profile Page**
 
-![profile-page](https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453959/images/food-paradise-desktop/32165381-3c96f947bcba11c5b9719cae8d9e28da_oilku6.png)
+<img src="https://res.cloudinary.com/aldobangun-netlify-app/image/upload/v1663453959/images/food-paradise-desktop/32165381-3c96f947bcba11c5b9719cae8d9e28da_oilku6.png" alt="profile page" width="400" />
+
+<br />
 
 ## Backend API
 [Food Paradise RESTful API](https://github.com/aldobangun/food-paradise)
